@@ -17,7 +17,7 @@ async def getdata():
 
     # Path to dataset used in our endpoint
     locs_path = os.path.join(os.path.dirname(
-        __file__), '..', '..', 'all_sources_geoed.csv')
+        __file__), '..', '..', 'all_sources_geoed_labelled.csv')
 
     router = APIRouter()
 
