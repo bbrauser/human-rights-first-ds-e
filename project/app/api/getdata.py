@@ -17,18 +17,19 @@ async def getdata():
 
     # Path to dataset used in our endpoint
     locs_path = os.path.join(os.path.dirname(
-        __file__), '..', '..', 'all_sources_geoed_labelled.csv')
+        __file__), 'all_sources_geoed_labelled.csv')
 
     router = APIRouter()
 
     df = pd.read_csv(locs_path)
     # Fix issue where "Unnamed: 0" created when reading in the dataframe
-    df = df.drop(columns="Unnamed: 0")
+    #df = df.drop(columns="Unnamed: 0")
 
     # Removes the string type output from columns src and tags, leaving them as arrays for easier use by backend
-    for i in range(len(df)):
-        df['src'][i] = ast.literal_eval(df['src'][i])
-        df['tags'][i] = ast.literal_eval(df['tags'][i])
+    #for i in range(len(df)):
+    #    df['src'][i] = ast.literal_eval(df['src'][i])
+    #    df['tags'][i] = ast.literal_eval(df['tags'][i])
+    #all bad
 
 
     """
